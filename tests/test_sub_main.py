@@ -17,16 +17,19 @@ def test_init_prod(product_samsung):
 
 @pytest.fixture
 def category_tv():
-    return Category("Телевизоры", "Современный телевизор, который позволяет наслаждаться просмотром,"
-                                 " станет вашим другом и помощником", ["55\" QLED 4K",
-                                 " Фоновая подсветка", 123000.0, 7])
+    return Category(
+        "Телевизоры",
+        "Современный телевизор, который позволяет наслаждаться просмотром," " станет вашим другом и помощником",
+        ['55" QLED 4K', "Фоновая подсветка", 123000.0, 7],
+    )
 
 
 def test_init_cat(category_tv):
     assert category_tv.name == "Телевизоры"
-    assert category_tv.description == ("Современный телевизор, который позволяет наслаждаться просмотром,"
-                                       " станет вашим другом и помощником")
-    assert category_tv.products == ["55\" QLED 4K", "Фоновая подсветка", 123000.0, 7]
+    assert category_tv.description == (
+        "Современный телевизор, который позволяет наслаждаться просмотром," " станет вашим другом и помощником"
+    )
+    assert category_tv.products == ['55" QLED 4K', "Фоновая подсветка", 123000.0, 7]
 
     assert Category.category_count == 1
-    assert Category.product_count == 1
+    assert Category.product_count == 4
